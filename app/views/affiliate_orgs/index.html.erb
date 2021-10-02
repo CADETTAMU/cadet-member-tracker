@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Home', home_index_path %>
+<h1>Affiliate Orgs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Org name</th>
+      <th>Org link</th>
+      <th>Org desc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @affiliate_orgs.each do |affiliate_org| %>
+      <tr>
+        <td><%= affiliate_org.org_name %></td>
+        <td><%= affiliate_org.org_link %></td>
+        <td><%= affiliate_org.org_desc %></td>
+        <td><%= link_to 'Show', affiliate_org %></td>
+        <td><%= link_to 'Edit', edit_affiliate_org_path(affiliate_org) %></td>
+        <td><%= link_to 'Destroy', affiliate_org, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Affiliate Org', new_affiliate_org_path %>

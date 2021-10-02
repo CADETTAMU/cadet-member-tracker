@@ -1,12 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to 'Home', home_index_path %>
 <h1>Announcements</h1>
 
 <table>
   <thead>
     <tr>
+      <th>Publish</th>
+      <th>Author</th>
+      <th>Publish date</th>
       <th>Title</th>
-      <th>Body</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,8 +17,10 @@
   <tbody>
     <% @announcements.each do |announcement| %>
       <tr>
+        <td><%= announcement.publish_id %></td>
+        <td><%= announcement.author %></td>
+        <td><%= announcement.publish_date %></td>
         <td><%= announcement.title %></td>
-        <td><%= announcement.body %></td>
         <td><%= link_to 'Show', announcement %></td>
         <td><%= link_to 'Edit', edit_announcement_path(announcement) %></td>
         <td><%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %></td>

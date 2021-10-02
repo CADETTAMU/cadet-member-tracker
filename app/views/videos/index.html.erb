@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Home', home_index_path %>
+<h1>Videos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Publish</th>
+      <th>Publish date</th>
+      <th>Title</th>
+      <th>Uploader</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= video.publish_id %></td>
+        <td><%= video.publish_date %></td>
+        <td><%= video.title %></td>
+        <td><%= video.uploader %></td>
+        <td><%= link_to 'Show', video %></td>
+        <td><%= link_to 'Edit', edit_video_path(video) %></td>
+        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Video', new_video_path %>

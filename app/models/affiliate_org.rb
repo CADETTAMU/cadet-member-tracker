@@ -1,0 +1,2 @@
+class AffiliateOrg < ApplicationRecord
+end

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Org name:</strong>
+  <%= @affiliate_org.org_name %>
+</p>
+
+<p>
+  <strong>Org link:</strong>
+  <%= @affiliate_org.org_link %>
+</p>
+
+<p>
+  <strong>Org desc:</strong>
+  <%= @affiliate_org.org_desc %>
+</p>
+
+<%= link_to 'Edit', edit_affiliate_org_path(@affiliate_org) %> |
+<%= link_to 'Back', affiliate_orgs_path %>

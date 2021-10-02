@@ -1,13 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @announcement.title %>
+  <strong>Publish:</strong>
+  <%= @announcement.publish_id %>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @announcement.body %>
+  <strong>Author:</strong>
+  <%= @announcement.author %>
+</p>
+
+<p>
+  <strong>Publish date:</strong>
+  <%= @announcement.publish_date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @announcement.title %>
 </p>
 
 <%= link_to 'Edit', edit_announcement_path(@announcement) %> |

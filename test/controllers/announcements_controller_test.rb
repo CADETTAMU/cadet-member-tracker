@@ -17,7 +17,11 @@ class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create announcement" do
     assert_difference('Announcement.count') do
+<<<<<<< HEAD
       post announcements_url, params: { announcement: { body: @announcement.body, title: @announcement.title } }
+=======
+      post announcements_url, params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, publish_id: @announcement.publish_id, title: @announcement.title } }
+>>>>>>> dev
     end
 
     assert_redirected_to announcement_url(Announcement.last)
@@ -34,7 +38,11 @@ class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update announcement" do
+<<<<<<< HEAD
     patch announcement_url(@announcement), params: { announcement: { body: @announcement.body, title: @announcement.title } }
+=======
+    patch announcement_url(@announcement), params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, publish_id: @announcement.publish_id, title: @announcement.title } }
+>>>>>>> dev
     assert_redirected_to announcement_url(@announcement)
   end
 

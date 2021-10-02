@@ -24,16 +24,15 @@ default: &default
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>
 
-
 development:
   <<: *default
-  database: cadet_member_tracker_development
+  database: cadet_app_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: cadet_member_tracker
+  #username: cadet_app
 
   # The password associated with the postgres role (username).
   #password:
@@ -61,7 +60,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: cadet_member_tracker_test
+  database: cadet_app_test
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,6 +84,6 @@ test:
 #
 production:
   <<: *default
-  database: cadet_member_tracker_production
-  username: cadet_member_tracker
-  password: <%= ENV['CADET_MEMBER_TRACKER_DATABASE_PASSWORD'] %>
+  database: cadet_app_production
+  username: cadet_app
+  password: <%= ENV['CADET_APP_DATABASE_PASSWORD'] %>

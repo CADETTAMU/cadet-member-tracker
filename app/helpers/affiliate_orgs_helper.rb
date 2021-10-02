@@ -1,0 +1,2 @@
+module AffiliateOrgsHelper
+end

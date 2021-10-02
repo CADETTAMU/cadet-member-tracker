@@ -14,7 +14,13 @@ class AnnouncementsTest < ApplicationSystemTestCase
     visit announcements_url
     click_on "New Announcement"
 
+<<<<<<< HEAD
     fill_in "Body", with: @announcement.body
+=======
+    fill_in "Author", with: @announcement.author
+    fill_in "Publish date", with: @announcement.publish_date
+    fill_in "Publish", with: @announcement.publish_id
+>>>>>>> dev
     fill_in "Title", with: @announcement.title
     click_on "Create Announcement"
 
@@ -26,7 +32,13 @@ class AnnouncementsTest < ApplicationSystemTestCase
     visit announcements_url
     click_on "Edit", match: :first
 
+<<<<<<< HEAD
     fill_in "Body", with: @announcement.body
+=======
+    fill_in "Author", with: @announcement.author
+    fill_in "Publish date", with: @announcement.publish_date
+    fill_in "Publish", with: @announcement.publish_id
+>>>>>>> dev
     fill_in "Title", with: @announcement.title
     click_on "Update Announcement"
 
