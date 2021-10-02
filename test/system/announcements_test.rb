@@ -16,7 +16,6 @@ class AnnouncementsTest < ApplicationSystemTestCase
 
     fill_in "Author", with: @announcement.author
     fill_in "Publish date", with: @announcement.publish_date
-    fill_in "Publish", with: @announcement.publish_id
     fill_in "Title", with: @announcement.title
     click_on "Create Announcement"
 
@@ -30,7 +29,6 @@ class AnnouncementsTest < ApplicationSystemTestCase
 
     fill_in "Author", with: @announcement.author
     fill_in "Publish date", with: @announcement.publish_date
-    fill_in "Publish", with: @announcement.publish_id
     fill_in "Title", with: @announcement.title
     click_on "Update Announcement"
 

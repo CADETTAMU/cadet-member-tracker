@@ -15,7 +15,6 @@ class VideosTest < ApplicationSystemTestCase
     click_on "New Video"
 
     fill_in "Publish date", with: @video.publish_date
-    fill_in "Publish", with: @video.publish_id
     fill_in "Title", with: @video.title
     fill_in "Uploader", with: @video.uploader
     click_on "Create Video"
@@ -29,7 +28,6 @@ class VideosTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Publish date", with: @video.publish_date
-    fill_in "Publish", with: @video.publish_id
     fill_in "Title", with: @video.title
     fill_in "Uploader", with: @video.uploader
     click_on "Update Video"

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_01_011041) do
+ActiveRecord::Schema.define(version: 2021_10_02_201849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 2021_10_01_011041) do
   end
 
   create_table "announcements", force: :cascade do |t|
-    t.string "publish_id"
     t.string "author"
     t.datetime "publish_date"
     t.string "title"
@@ -33,7 +32,6 @@ ActiveRecord::Schema.define(version: 2021_10_01_011041) do
   end
 
   create_table "videos", force: :cascade do |t|
-    t.string "publish_id"
     t.datetime "publish_date"
     t.string "title"
     t.string "uploader"
