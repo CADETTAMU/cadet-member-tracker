@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Home', home_index_path %>
+
+<p>
+  <strong>Publish:</strong>
+  <%= @video.publish_id %>
+</p>
+
+<p>
+  <strong>Publish date:</strong>
+  <%= @video.publish_date %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @video.title %>
+</p>
+
+<p>
+  <strong>Uploader:</strong>
+  <%= @video.uploader %>
+</p>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>
