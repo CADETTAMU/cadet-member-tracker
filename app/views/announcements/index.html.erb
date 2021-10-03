@@ -33442,11 +33442,16 @@
                                                                             <thead>
                                                                                 <tr>
                                                                                     <th>Title</th>
-                                                                                    <th>Publish date</th>
                                                                                     <th>Body</th>
+                                                                                    <th>Publish date</th>
                                                                                     <th colspan="3"></th>
                                                                                 </tr>
                                                                             </thead>
+                                                                            <style>
+                                                                            td {
+                                                                                  word-wrap: break-word;
+                                                                              }
+                                                                              </style>
 
                                                                             <tbody>
                                                                                 <% @announcements.each do |announcement| %>
@@ -33455,10 +33460,10 @@
                                                                                             <%= announcement.author %>
                                                                                         </td>
                                                                                         <td>
-                                                                                            <%= announcement.publish_date %>
+                                                                                            <%= announcement.title %>
                                                                                         </td>
                                                                                         <td>
-                                                                                            <%= announcement.title %>
+                                                                                            <%= announcement.publish_date %>
                                                                                         </td>
                                                                                         <td>
                                                                                             <%= link_to 'Show', announcement %>
