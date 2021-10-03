@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'home/index'
   get 'videos/index'
+  get '/Calendar', to: 'home#calendar'
   get '/Announcements', to: 'announcements#index'
   resources :affiliate_orgs
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
