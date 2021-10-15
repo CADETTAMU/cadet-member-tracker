@@ -19,8 +19,11 @@ class AnnouncementsTest < ApplicationSystemTestCase
 =======
     fill_in "Author", with: @announcement.author
     fill_in "Publish date", with: @announcement.publish_date
+<<<<<<< HEAD
     fill_in "Publish", with: @announcement.publish_id
 >>>>>>> dev
+=======
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
     fill_in "Title", with: @announcement.title
     click_on "Create Announcement"
 
@@ -37,8 +40,11 @@ class AnnouncementsTest < ApplicationSystemTestCase
 =======
     fill_in "Author", with: @announcement.author
     fill_in "Publish date", with: @announcement.publish_date
+<<<<<<< HEAD
     fill_in "Publish", with: @announcement.publish_id
 >>>>>>> dev
+=======
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
     fill_in "Title", with: @announcement.title
     click_on "Update Announcement"
 

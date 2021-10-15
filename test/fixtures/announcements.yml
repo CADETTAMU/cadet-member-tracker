@@ -2,6 +2,7 @@
 
 one:
 <<<<<<< HEAD
+<<<<<<< HEAD
   title: MyString
   body: MyString
 
@@ -10,12 +11,13 @@ two:
   body: MyString
 =======
   publish_id: MyString
+=======
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
   author: MyString
   publish_date: 2021-10-01 01:10:41
   title: MyString
 
 two:
-  publish_id: MyString
   author: MyString
   publish_date: 2021-10-01 01:10:41
   title: MyString
