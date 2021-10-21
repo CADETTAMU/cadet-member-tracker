@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[ show edit update destroy ]
-
+  after_action :verify_authorized, only: [:edit, :destroy]
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
@@ -36,6 +36,10 @@ class AttendancesController < ApplicationController
 
   # PATCH/PUT /attendances/1 or /attendances/1.json
   def update
+    @attendance = Attendance.find(params[:id])
+    authorize @attendance
+    @attendance.update(likes: params[:likes])
+    redirect_to attendances_path
     respond_to do |format|
       if @attendance.update(attendance_params)
         format.html { redirect_to @attendance, notice: "Attendance was successfully updated." }
