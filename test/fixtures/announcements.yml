@@ -1,6 +1,18 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+<<<<<<< HEAD
+<<<<<<< HEAD
+  title: MyString
+  body: MyString
+
+two:
+  title: MyString
+  body: MyString
+=======
+  publish_id: MyString
+=======
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
   author: MyString
   publish_date: 2021-10-01 01:10:41
   title: MyString
@@ -9,3 +21,4 @@ two:
   author: MyString
   publish_date: 2021-10-01 01:10:41
   title: MyString
+>>>>>>> dev

@@ -17,7 +17,15 @@ class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create announcement" do
     assert_difference('Announcement.count') do
+<<<<<<< HEAD
+<<<<<<< HEAD
+      post announcements_url, params: { announcement: { body: @announcement.body, title: @announcement.title } }
+=======
+      post announcements_url, params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, publish_id: @announcement.publish_id, title: @announcement.title } }
+>>>>>>> dev
+=======
       post announcements_url, params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, title: @announcement.title } }
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
     end
 
     assert_redirected_to announcement_url(Announcement.last)
@@ -34,7 +42,15 @@ class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update announcement" do
+<<<<<<< HEAD
+<<<<<<< HEAD
+    patch announcement_url(@announcement), params: { announcement: { body: @announcement.body, title: @announcement.title } }
+=======
+    patch announcement_url(@announcement), params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, publish_id: @announcement.publish_id, title: @announcement.title } }
+>>>>>>> dev
+=======
     patch announcement_url(@announcement), params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, title: @announcement.title } }
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
     assert_redirected_to announcement_url(@announcement)
   end
 
