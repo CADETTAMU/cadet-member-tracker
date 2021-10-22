@@ -33435,6 +33435,8 @@
                                                             <div class="tyJCtd mGzaTb baZpAe">
                                                                 <p dir="ltr" class="CDt4Ke zfr3Q"><span style="font-variant: normal;">RUBY CODE GOES HERE</span></p>
                                                                 <table>
+                                                                <% if member_signed_in? %>
+                                                                  <% if current_member.is_admin? %>
                                                                   <thead>
                                                                     <tr>
                                                                       <th>Publish</th>
@@ -33456,13 +33458,20 @@
                                                                         <td><%= link_to 'Edit', edit_video_path(video) %></td>
                                                                         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                                                                       </tr>
+
                                                                     <% end %>
                                                                   </tbody>
+                                                                  <% end %>
+                                                                <% end %>
                                                                 </table>
 
                                                                 <br>
 
-                                                                <%= link_to 'New Video', new_video_path %>
+                                                                <% if member_signed_in? %>
+                                                                    <% if current_member.is_admin? %>
+                                                                        <%= link_to 'New Video', new_video_path %>
+                                                                    <% end %>
+                                                                <% end %>
                                                             </div>
                                                         </div>
                                                     </div>

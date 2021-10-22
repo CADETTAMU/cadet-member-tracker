@@ -1,13 +1,15 @@
 class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def google_oauth2
-    member = Member.from_google(**from_google_params)
+    @member = Member.from_google(**from_google_params)
 
-    if member.present?
-      sign_out_all_scopes
+    if @member.present?
+      #sign_out_all_scopes
+      sign_in_and_redirect @member, event: :authentication
       flash[:success] = t 'devise.omniauth_callbacks.success', kind: 'Google'
-      sign_in_and_redirect member, event: :authentication
+      #sign_in_and_redirect member, event: :authentication
     else
       flash[:alert] = t 'devise.omniauth_callbacks.failure', kind: 'Google', reason: "#{auth.info.email} is not authorized."
+      session['devise.google_data'] = request.env['omniauth.auth'].except('extra')
       redirect_to new_member_session_path
     end
   end
@@ -35,6 +37,6 @@ class Members::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def auth
-    @auth ||= request.env['omniauth.auth']
+    @auth = request.env['omniauth.auth']
   end
 end

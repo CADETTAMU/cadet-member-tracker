@@ -33445,7 +33445,9 @@
                         </section>
                         <%= link_to "Sign in with Google", member_google_oauth2_omniauth_authorize_path, method: :post %>
                         <br>
-                        <%= link_to "Sign Out", destroy_member_session_path %>
+                        <% if member_signed_in? %>
+                            <%= button_to "Sign Out", destroy_member_session_path, method: :delete %>
+                        <% end %>
                         <section id="h.2df99c718bc5bd09_63" class="yaqOZd" style="">
                             <div class="IFuOkc"></div>
                             <div class="mYVXT">
