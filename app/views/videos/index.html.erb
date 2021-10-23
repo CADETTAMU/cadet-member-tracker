@@ -33475,7 +33475,9 @@
 
                                                                 <% if member_signed_in? %>
                                                                     <% if current_member.is_admin? %>
+                                                                        <%= link_to 'Instructions to Upload a Video from Youtube', '/cadet_youtube_instructions.pdf', :target => 'blank' %>
                                                                         <%= link_to 'New Video', new_video_path %>
+
                                                                     <% end %>
                                                                 <% end %>
 
