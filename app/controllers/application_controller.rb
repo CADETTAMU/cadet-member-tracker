@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
 		flash[:alert] = "Access denied."
 		redirect_back fallback_locatioon: home_path
 	end
+
+	def pundit_user
+		User.find_by_other_means
+	end
 end

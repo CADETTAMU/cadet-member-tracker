@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class AttendancePolicy
+class AttendancePolicy < ApplicationPolicy
   attr_reader :current_user, :attendance
 
   def initialize(current_user, attendance)
@@ -9,7 +9,9 @@ class AttendancePolicy
   end
 
   def update?
-    @current_user.role == 'admin'    
+     if (member.is_admin) {
+
+     }    
   end
 
   def edit?

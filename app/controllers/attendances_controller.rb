@@ -1,6 +1,7 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[ show edit update destroy ]
-  after_action :verify_authorized, only: [:edit, :destroy]
+
+  after_action :verify_authorized, only: [:show, :edit,:update, :destroy]
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
@@ -60,6 +61,7 @@ class AttendancesController < ApplicationController
     end
   end
 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
@@ -70,4 +72,6 @@ class AttendancesController < ApplicationController
     def attendance_params
       params.require(:attendance).permit(:name, :uin, :meeting_number, :attended_at)
     end
+
+
 end
