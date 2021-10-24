@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'rexml'
 
 # OAuth Gems
 gem 'devise'
@@ -55,6 +56,7 @@ group :development do
   gem 'rubocop-performance', :require => false
   gem 'rubocop-rails', :require => false
   gem 'rubocop-rspec', :require => false
+  gem 'rspec-rails'
 end
 
 group :test do

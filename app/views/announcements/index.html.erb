@@ -33473,20 +33473,27 @@
                                                                                         <td>
                                                                                             <%= link_to 'Show', announcement %>
                                                                                         </td>
-                                                                                        <td>
-                                                                                            <%= link_to 'Edit', edit_announcement_path(announcement) %>
-                                                                                        </td>
-                                                                                        <td>
-                                                                                            <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %>
-                                                                                        </td>
+                                                                                        <% if member_signed_in? %>
+                                                                                            <% if current_member.is_admin? %>
+                                                                                                <td>
+                                                                                                    <%= link_to 'Edit', edit_announcement_path(announcement) %>
+                                                                                                </td>
+                                                                                                <td>
+                                                                                                    <%= link_to 'Destroy', announcement, method: :delete, data: { confirm: 'Are you sure?' } %>
+                                                                                                </td>
+                                                                                            <% end %>
+                                                                                        <% end %>
                                                                                     </tr>
                                                                                     <% end %>
                                                                             </tbody>
                                                                         </table>
 
                                                                         <br>
-
-                                                                        <%= link_to 'New Announcement', new_announcement_path %>
+                                                                        <% if member_signed_in? %>
+                                                                            <% if current_member.is_admin? %>
+                                                                                <%= link_to 'New Announcement', new_announcement_path %>
+                                                                            <% end %>
+                                                                        <% end %>
                                                                 </p>
                                                                 <!-- ################################################################################################### -->
                                                             </div>
