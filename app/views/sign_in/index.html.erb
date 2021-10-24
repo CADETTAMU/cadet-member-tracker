@@ -33173,12 +33173,14 @@
                                             <div class="I35ICb"><a class="aJHbb dk90Ob hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Videos.html" data-url="Videos.html" data-type="1" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1" data-page="1Y7wvJfDME-MwIomKtvZDvkzK7n0k3k2u">Videos</a></div>
                                         </div>
                                     </li>
+                                    <% if member_signed_in? %>
                                     <li jsname="ibnC6b" nav-level="1">
                                         <div class="PsKE7e r8s4j-R6PoUb IKA38e baH5ib oNsfjf">
                                             <div class="I35ICb"><a class="aJHbb dk90Ob hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Attendances.html" data-url="Attendances.html" data-type="1" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1"
                                                     data-page="17PSFMK8SranSxe3wMaKmvQ0r1ocVs6BI">Attendance Tracker</a></div>
                                         </div>
                                     </li>
+                                    <% end %>
                                     <li jsname="ibnC6b" nav-level="1">
                                         <div class="PsKE7e r8s4j-R6PoUb IKA38e baH5ib oNsfjf">
                                             <div class="I35ICb"><a class="aJHbb dk90Ob hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Calendar.html" data-url="Calendar.html" data-type="1" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1" data-page="1C0DvTjYQ47XJ9mfdHbuwE6TonkITedaz">Calendar</a></div>
@@ -33247,6 +33249,7 @@
                                                 </div>
                                                 <div class="rgLkl"></div>
                                             </li>
+                                            <% if member_signed_in? %>
                                             <li jsname="ibnC6b" nav-level="1" class="VsJjtf">
                                                 <div class="PsKE7e qV4dIc Qrrb5 YSH9J">
                                                     <div class="I35ICb"><a class="aJHbb dk90Ob jgXgSe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Attendances.html" data-url="Attendances.html" data-type="1" title="Attendance Tracker" jsaction="keydown:mPuKz; click:vHQTA;"
@@ -33254,6 +33257,7 @@
                                                 </div>
                                                 <div class="rgLkl"></div>
                                             </li>
+                                            <% end %>
                                             <li jsname="ibnC6b" nav-level="1" class="VsJjtf">
                                                 <div class="PsKE7e qV4dIc Qrrb5 YSH9J">
                                                     <div class="I35ICb"><a class="aJHbb dk90Ob jgXgSe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Calendar.html" data-url="Calendar.html" data-type="1" title="Calendar" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1"
@@ -33326,12 +33330,14 @@
                                                                         data-level="2" data-page="1Y7wvJfDME-MwIomKtvZDvkzK7n0k3k2u">Videos</a></div>
                                                             </div>
                                                         </li>
+                                                        <% if member_signed_in? %>
                                                         <li jsname="ibnC6b" nav-level="2" class="ijMPi ZmrVpf" in-more-item>
                                                             <div class="PsKE7e IKA38e oNsfjf">
                                                                 <div class="I35ICb"><a class="aJHbb hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Attendances.html" data-url="Attendances.html" data-type="1" title="Attendance Tracker" jsaction="keydown:mPuKz; click:vHQTA;"
                                                                         data-in-more-submenu="true" data-level="2" data-page="17PSFMK8SranSxe3wMaKmvQ0r1ocVs6BI">Attendance Tracker</a></div>
                                                             </div>
                                                         </li>
+                                                        <% end %>
                                                         <li jsname="ibnC6b" nav-level="2" class="ijMPi ZmrVpf" in-more-item>
                                                             <div class="PsKE7e IKA38e oNsfjf">
                                                                 <div class="I35ICb"><a class="aJHbb hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Calendar.html" data-url="Calendar.html" data-type="1" title="Calendar" jsaction="keydown:mPuKz; click:vHQTA;"
@@ -33445,7 +33451,9 @@
                         </section>
                         <%= link_to "Sign in with Google", member_google_oauth2_omniauth_authorize_path, method: :post %>
                         <br>
-                        <%= link_to "Sign Out", destroy_member_session_path %>
+                        <% if member_signed_in? %>
+                            <%= button_to "Sign Out", destroy_member_session_path, method: :delete %>
+                        <% end %>
                         <section id="h.2df99c718bc5bd09_63" class="yaqOZd" style="">
                             <div class="IFuOkc"></div>
                             <div class="mYVXT">

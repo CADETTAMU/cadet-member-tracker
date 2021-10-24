@@ -77,4 +77,6 @@ Rails.application.configure do
   # For Google OAuth
   ENV['GOOGLE_OAUTH_CLIENT_ID'] = '20270167427-jsjim7m6c9r763e9nrtt7mu9vsh3vl5j.apps.googleusercontent.com'
   ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
 end

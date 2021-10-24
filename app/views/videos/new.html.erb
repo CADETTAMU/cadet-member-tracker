@@ -1,6 +1,9 @@
 <%= link_to 'Home', home_index_path %>
 <h1>New Video</h1>
-
-<%= render 'form', video: @video %>
+<% if member_signed_in? %>
+<% if current_member.is_admin? %>
+    <%= render 'form', video: @video %>
+<% end %>
+<% end %>
 
 <%= link_to 'Back', videos_path %>

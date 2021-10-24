@@ -33174,12 +33174,14 @@
                                                     data-page="1Y7wvJfDME-MwIomKtvZDvkzK7n0k3k2u">Videos</a></div>
                                         </div>
                                     </li>
+                                    <% if member_signed_in? %>
                                     <li jsname="ibnC6b" nav-level="1">
                                         <div class="PsKE7e r8s4j-R6PoUb IKA38e baH5ib oNsfjf">
                                             <div class="I35ICb"><a class="aJHbb dk90Ob hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Attendances.html" data-url="Attendances.html" data-type="1" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1"
                                                     data-page="17PSFMK8SranSxe3wMaKmvQ0r1ocVs6BI">Attendance Tracker</a></div>
                                         </div>
                                     </li>
+                                    <% end %>
                                     <li jsname="ibnC6b" nav-level="1">
                                         <div class="PsKE7e r8s4j-R6PoUb IKA38e baH5ib oNsfjf">
                                             <div class="I35ICb"><a class="aJHbb dk90Ob hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Calendar.html" data-url="Calendar.html" data-type="1" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1" data-page="1C0DvTjYQ47XJ9mfdHbuwE6TonkITedaz">Calendar</a></div>
@@ -33248,6 +33250,7 @@
                                                 </div>
                                                 <div class="rgLkl"></div>
                                             </li>
+                                            <% if member_signed_in? %>
                                             <li jsname="ibnC6b" nav-level="1" class="VsJjtf">
                                                 <div class="PsKE7e qV4dIc Qrrb5 YSH9J">
                                                     <div class="I35ICb"><a class="aJHbb dk90Ob jgXgSe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Attendances.html" data-url="Attendances.html" data-type="1" title="Attendance Tracker" jsaction="keydown:mPuKz; click:vHQTA;"
@@ -33255,6 +33258,7 @@
                                                 </div>
                                                 <div class="rgLkl"></div>
                                             </li>
+                                            <% end %>
                                             <li jsname="ibnC6b" nav-level="1" class="VsJjtf">
                                                 <div class="PsKE7e qV4dIc Qrrb5 YSH9J">
                                                     <div class="I35ICb"><a class="aJHbb dk90Ob jgXgSe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Calendar.html" data-url="Calendar.html" data-type="1" title="Calendar" jsaction="keydown:mPuKz; click:vHQTA;" data-level="1"
@@ -33327,12 +33331,14 @@
                                                                         data-in-more-submenu="true" data-level="2" data-page="1Y7wvJfDME-MwIomKtvZDvkzK7n0k3k2u">Videos</a></div>
                                                             </div>
                                                         </li>
+                                                        <% if member_signed_in? %>
                                                         <li jsname="ibnC6b" nav-level="2" class="ijMPi ZmrVpf" in-more-item>
                                                             <div class="PsKE7e IKA38e oNsfjf">
                                                                 <div class="I35ICb"><a class="aJHbb hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Attendances.html" data-url="Attendances.html" data-type="1" title="Attendance Tracker" jsaction="keydown:mPuKz; click:vHQTA;"
                                                                         data-in-more-submenu="true" data-level="2" data-page="17PSFMK8SranSxe3wMaKmvQ0r1ocVs6BI">Attendance Tracker</a></div>
                                                             </div>
                                                         </li>
+                                                        <% end %>
                                                         <li jsname="ibnC6b" nav-level="2" class="ijMPi ZmrVpf" in-more-item>
                                                             <div class="PsKE7e IKA38e oNsfjf">
                                                                 <div class="I35ICb"><a class="aJHbb hDrhEe HlqNPb" jsname="QwLHlb" role="link" tabindex="-1" href="Calendar.html" data-url="Calendar.html" data-type="1" title="Calendar" jsaction="keydown:mPuKz; click:vHQTA;"
@@ -33435,6 +33441,8 @@
                                                             <div class="tyJCtd mGzaTb baZpAe">
                                                                 <p dir="ltr" class="CDt4Ke zfr3Q"><span style="font-variant: normal;">RUBY CODE GOES HERE</span></p>
                                                                 <table>
+                                                                <% if member_signed_in? %>
+                                                                  <% if current_member.is_admin? %>
                                                                   <thead>
                                                                     <tr>
                                                                       <th>Publish</th>
@@ -33448,7 +33456,7 @@
                                                                   <tbody>
                                                                     <% @videos.each do |video| %>
                                                                       <tr>
-                                                                        <td><%= video.publish_id %></td>
+                                                                        <td><%= video.link %></td>
                                                                         <td><%= video.publish_date %></td>
                                                                         <td><%= video.title %></td>
                                                                         <td><%= video.uploader %></td>
@@ -33456,13 +33464,30 @@
                                                                         <td><%= link_to 'Edit', edit_video_path(video) %></td>
                                                                         <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                                                                       </tr>
+
                                                                     <% end %>
                                                                   </tbody>
+                                                                  <% end %>
+                                                                <% end %>
                                                                 </table>
 
                                                                 <br>
 
-                                                                <%= link_to 'New Video', new_video_path %>
+                                                                <% if member_signed_in? %>
+                                                                    <% if current_member.is_admin? %>
+                                                                        <%= link_to 'Instructions to Upload a Video from Youtube', '/cadet_youtube_instructions.pdf', :target => 'blank' %>
+                                                                        <%= link_to 'New Video', new_video_path %>
+
+                                                                    <% end %>
+                                                                <% end %>
+
+                                                                <tbody>
+                                                                <% @videos.each do |video| %>
+                                                                    <tr>
+                                                                    <iframe width=500 height=300 src=<%= video.link %> sandbox="allow-scripts allow-popups allow-forms allow-same-origin allow-popups-to-escape-sandbox allow-downloads" frameborder="0" allowfullscreen></iframe>
+                                                                    </tr>
+                                                                <% end %>
+                                                                </tbody>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -33558,17 +33583,7 @@
                                                             <div class="tyJCtd mGzaTb baZpAe">
                                                             <table>
                                                             <tbody>
-                                                            <% @videos.each do |video| %>
-                                                              <tr>
-                                                                <td><%= video.publish_id %></td>
-                                                                <td><%= video.publish_date %></td>
-                                                                <td><%= video.title %></td>
-                                                                <td><%= video.uploader %></td>
-                                                                <td><%= link_to 'Show', video %></td>
-                                                                <td><%= link_to 'Edit', edit_video_path(video) %></td>
-                                                                <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                                                              </tr>
-                                                            <% end %>
+                                                            
                                                             </tbody>
                                                             </table>
                                                                 <p dir="ltr" class="CDt4Ke zfr3Q"><span style="font-variant: normal;">RUBY CODE </span>ENDS <span style="font-variant: normal;">HERE</span></p>
