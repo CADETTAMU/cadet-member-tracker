@@ -1,14 +1,12 @@
 <p id="notice"><%= notice %></p>
-
+<% if current_member.is_admin? %>
 <h1>Attendances</h1>
-
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Uin</th>
-      <th>Meeting number</th>
-      <th>Attended at</th>
+      <th>Email</th>
+      <th>Meeting#</th>
+      <th>Date/Time</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,8 +14,7 @@
   <tbody>
     <% @attendances.each do |attendance| %>
       <tr>
-        <td><%= attendance.name %></td>
-        <td><%= attendance.uin %></td>
+        <td><%= attendance.email %></td>
         <td><%= attendance.meeting_number %></td>
         <td><%= attendance.attended_at %></td>
         <td><%= link_to 'Show', attendance %></td>
@@ -27,7 +24,6 @@
     <% end %>
   </tbody>
 </table>
-
+<% end %>
 <br>
-
-<%= link_to 'New Attendance', new_attendance_path %>
+<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => 1, :attended_at => DateTime.current}, {:method => :post} %></td>
