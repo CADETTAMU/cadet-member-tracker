@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Attendances</h1>
-
 <% if current_member.is_admin? %>
+<h1>Attendances</h1>
 <table>
   <thead>
     <tr>
@@ -28,5 +26,4 @@
 </table>
 <% end %>
 <br>
-<td><%= button_to '<' ,{:controller => 'attendances', :action => 'create', :email => "diego@lorenso.com", :meeting_number => 1, :attended_at => DateTime.current}, {:method => :post} %></td>
-<%= link_to 'New Attendance', new_attendance_path %>
+<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => 1, :attended_at => DateTime.current}, {:method => :post} %></td>
