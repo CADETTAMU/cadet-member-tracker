@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_10_24_220129) do
 
   create_table "announcements", force: :cascade do |t|
     t.string "title"
-    t.string "author"
+    t.string "author_announce"
     t.datetime "publish_date", precision: 6, null: false
   end
 
