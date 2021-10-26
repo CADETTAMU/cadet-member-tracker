@@ -83,6 +83,7 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
         <% if member_signed_in? %>
             <% if current_member.is_admin? %>
                 <%= link_to 'Instructions to Upload a Video from Youtube', '/cadet_youtube_instructions.pdf', :target => 'blank' %>
+                <%= link_to 'Instructions to Upload a Video from Google Drive', '/cadet_drive_video_instructions.pdf', :target => 'blank' %>
                 <%= link_to 'New Video', new_video_path %>
 
             <% end %>
