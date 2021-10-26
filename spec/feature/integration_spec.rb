@@ -4,8 +4,8 @@ require 'rails_helper'
 RSpec.describe 'Creating an announcement', type: :feature do
   scenario 'valid title' do
     visit new_announcement_path
-    fill_in 'title', with: 'test announcement title'
-    fill_in 'body', with: 'test announcement body'
+    fill_in 'Title', with: 'test announcement title'
+    fill_in 'Body', with: 'test announcement body'
     select '2020', :from => 'announcement_published_date_1i'
     select 'January', :from => 'announcement_published_date_2i'
     select '10', :from => 'announcement_published_date_3i'
@@ -18,8 +18,8 @@ RSpec.describe 'Creating an announcement', type: :feature do
   
   scenario 'valid body' do
     visit new_announcement_path
-    fill_in 'title', with: 'test announcement title'
-    fill_in 'body', with: 'test announcement body'
+    fill_in 'Title', with: 'test announcement title'
+    fill_in 'Body', with: 'test announcement body'
     select '2020', :from => 'announcement_published_date_1i'
     select 'January', :from => 'announcement_published_date_2i'
     select '10', :from => 'announcement_published_date_3i'
@@ -30,10 +30,10 @@ RSpec.describe 'Creating an announcement', type: :feature do
     expect(page).to have_content('test announcement body')
   end
 
-  scenario 'valid inputs' do
+  scenario 'valid date' do
     visit new_announcement_path
-    fill_in 'title', with: 'test announcement title'
-    fill_in 'body', with: 'test announcement body'
+    fill_in 'Title', with: 'test announcement title'
+    fill_in 'Body', with: 'test announcement body'
     select '2020', :from => 'announcement_published_date_1i'
     select 'January', :from => 'announcement_published_date_2i'
     select '10', :from => 'announcement_published_date_3i'
