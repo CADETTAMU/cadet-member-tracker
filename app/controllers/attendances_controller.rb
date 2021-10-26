@@ -56,6 +56,10 @@ class AttendancesController < ApplicationController
     end
   end
 
+  def attend 
+    Attendance.create(email: "diego@lorenso.com", meeting_number:1, attended_at:DateTime.current)
+  end 
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
@@ -64,6 +68,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.require(:attendance).permit(:name, :uin, :meeting_number, :attended_at)
+      params.permit(:email, :meeting_number, :attended_at)
     end
 end

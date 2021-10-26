@@ -2,7 +2,8 @@ class CreateAnnouncements < ActiveRecord::Migration[6.1]
   def change
     create_table :announcements do |t|
       t.string :title
-      t.string :body
+      t.string :author_announce
+      t.datetime :publish_date
 
       t.timestamps
     end
