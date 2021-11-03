@@ -61,6 +61,7 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+<<<<<<< HEAD
   module SpecTestHelper   
     def login_admin
       login(:admin)
@@ -75,4 +76,6 @@ RSpec.configure do |config|
       User.find(request.session[:user])
     end
   end
+=======
+>>>>>>> f24077476f3fcdf96bcaa8c7411b318afbd0346f
 end

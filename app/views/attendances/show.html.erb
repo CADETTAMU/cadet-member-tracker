@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
-  <%= @attendance.name %>
-</p>
-
-<p>
-  <strong>Uin:</strong>
-  <%= @attendance.uin %>
+  <strong>Email:</strong>
+  <%= @attendance.email %>
 </p>
 
 <p>
@@ -19,6 +14,8 @@
   <strong>Attended at:</strong>
   <%= @attendance.attended_at %>
 </p>
+<% if current_member.is_admin? %>
+<%= link_to 'Edit', edit_attendance_path(@attendance) %>
+<% end %>
 
-<%= link_to 'Edit', edit_attendance_path(@attendance) %> |
 <%= link_to 'Back', attendances_path %>
