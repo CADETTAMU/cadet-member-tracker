@@ -87,10 +87,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
-<<<<<<< HEAD
-=======
     docile (1.4.0)
->>>>>>> f24077476f3fcdf96bcaa8c7411b318afbd0346f
     erubi (1.10.0)
     faraday (1.8.0)
       faraday-em_http (~> 1.0)
