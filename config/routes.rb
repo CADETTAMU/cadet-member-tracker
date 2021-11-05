@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :members, controllers: {omniauth_callbacks: 'members/omniauth_callbacks'}
   devise_scope :member do
     get 'members/sign_in', to: 'sign_in#index', as: :new_member_session
-	  delete 'members/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
+	get 'members/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
   end
 
   #root :to => 'home#index'
