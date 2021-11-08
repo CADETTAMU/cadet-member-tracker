@@ -14,15 +14,15 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :author_announce %>
+    <%= form.text_field :author_announce, id:"title" %>
   </div>
   <div class="field">
     <%= form.label :announcement %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, id:"body" %>
   </div>
   <div class="field">
     <%= form.label :publish_date %>
-    <%= form.datetime_select :publish_date %>
+    <%= form.datetime_select :publish_date, id:"date" %>
   </div>
 
   <div class="actions">
