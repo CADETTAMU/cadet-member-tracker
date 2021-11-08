@@ -1,4 +1,5 @@
 # location: spec/feature/integration_spec.rb
+=begin
 require 'rails_helper'
 require 'spec_helper'
 
@@ -35,3 +36,4 @@ RSpec.describe 'Creating an announcement', type: :feature do
   end
 
 end
+=end 
