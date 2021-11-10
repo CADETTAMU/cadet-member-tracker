@@ -68,7 +68,7 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
       <tr>
         <td><%= attendance.email %></td>
         <td><%= attendance.meeting_number %></td>
-        <td><%= attendance.attended_at %></td>
+        <td><%= attendance.created_at %></td>
         <td><%= link_to 'Show', attendance %></td>
         <td><%= link_to 'Edit', edit_attendance_path(attendance) %></td>
         <td><%= link_to 'Destroy', attendance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -76,10 +76,11 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
     <% end %>
   </tbody>
 </table>
+<td><%= link_to "View Meetings", meetings_path%><td>
 <% end %>
 <br>
 
-<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => 1, :attended_at => DateTime.current}, {:method => :post} %></td>
+<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => 1, :attended_at => Time.now}, {:method => :post} %></td>
 
 
               
