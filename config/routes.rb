@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :meetings
   # For OAuth
   devise_for :members, controllers: {omniauth_callbacks: 'members/omniauth_callbacks'}
   devise_scope :member do
