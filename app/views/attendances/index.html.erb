@@ -76,10 +76,16 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
     <% end %>
   </tbody>
 </table>
+
+<input id="numfield" type="number" name="meeting" value='<%= @entered_num %>'>
+<td><%= button_to 'Set meeting', :action => 'set_meeting_number'%></td>
+
 <% end %>
 <br>
 
-<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => 1, :attended_at => DateTime.current}, {:method => :post} %></td>
+
+
+<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => @meeting, :attended_at => DateTime.current}, {:method => :post} %></td>
 
 
               

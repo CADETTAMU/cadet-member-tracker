@@ -1,10 +1,23 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: %i[ show edit update destroy ]
 
+  @meeting = 1
   # GET /attendances or /attendances.json
   def index
     @attendances = Attendance.all
   end
+
+  # def set_meeting_number
+  #   @meeting = 0
+  #   flash.alert = "Meeting number set to 0."
+  # end
+  # helper_method :set_meeting_number
+
+  # def set_meeting_number(meeting_num)
+  #   @meeting = meeting_num
+  #   flash.alert = "Meeting number set to" + meeting_num + "."
+  # end
+  # helper_method :set_meeting_number
 
   # GET /attendances/1 or /attendances/1.json
   def show
@@ -56,10 +69,6 @@ class AttendancesController < ApplicationController
     end
   end
 
-  def attend 
-    Attendance.create(email: "diego@lorenso.com", meeting_number:1, attended_at:DateTime.current)
-  end 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_attendance
@@ -68,6 +77,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.permit(:email, :meeting_number, :attended_at)
+      params.permit(:email, :meeting_number, :attended_at, :meeting_num)
     end
 end
