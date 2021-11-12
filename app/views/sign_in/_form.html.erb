@@ -1,0 +1,31 @@
+<%= form_with(model: member) do |form| %>
+  <% if member.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(member.errors.count, "error") %> prohibited this member from being saved:</h2>
+
+      <ul>
+        <% member.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="field">
+    <p>Name: <%= member.full_name %></p>
+  </div>
+
+  <div class="field">
+    <p>Email: <%= member.email %></p>
+  </div>
+
+  <div class="field">
+    <%= form.label :is_admin %>
+    <%= form.check_box :is_admin %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
