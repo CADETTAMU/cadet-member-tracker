@@ -1,22 +1,3 @@
-<<<<<<< HEAD
-# frozen_string_literal: true
-
-class SignInController < ApplicationController
-  def index
-    @members = Member.all
-  end
-
-  def show; end
-
-  def new
-    @member = Member.new
-  end
-
-  def edit; end
-
-  def delete; end
-end
-=======
 class SignInController < ApplicationController
   before_action :set_sign_in, only: %i[ edit update destroy ]
 
@@ -68,4 +49,3 @@ class SignInController < ApplicationController
       params.require(:member).permit(:full_name, :email, :is_admin)
     end
 end
->>>>>>> 453c7d96daeaaa0ffebc12eeeacd5691840a8c29
