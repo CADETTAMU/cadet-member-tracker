@@ -12,7 +12,7 @@
 
 <p>
   <strong>Attended at:</strong>
-  <%= @attendance.attended_at %>
+  <%= @attendance.created_at %>
 </p>
 <% if current_member.is_admin? %>
 <%= link_to 'Edit', edit_attendance_path(@attendance) %>

@@ -12,7 +12,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20_211_024_220_129) do
+=======
+ActiveRecord::Schema.define(version: 2021_11_10_004122) do
+
+>>>>>>> 453c7d96daeaaa0ffebc12eeeacd5691840a8c29
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
@@ -40,6 +45,7 @@ ActiveRecord::Schema.define(version: 20_211_024_220_129) do
     t.string 'email'
   end
 
+<<<<<<< HEAD
   create_table 'members', force: :cascade do |t|
     t.string 'email', null: false
     t.string 'full_name'
@@ -49,6 +55,25 @@ ActiveRecord::Schema.define(version: 20_211_024_220_129) do
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
     t.index ['email'], name: 'index_members_on_email', unique: true
+=======
+  create_table "meetings", force: :cascade do |t|
+    t.string "Name"
+    t.integer "Number"
+    t.datetime "StartTime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "members", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.boolean "is_admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_members_on_email", unique: true
+>>>>>>> 453c7d96daeaaa0ffebc12eeeacd5691840a8c29
   end
 
   create_table 'videos', force: :cascade do |t|

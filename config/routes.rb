@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :meetings
   # For OAuth
   devise_for :members, controllers: { omniauth_callbacks: 'members/omniauth_callbacks' }
   devise_scope :member do
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   resources :announcements
   resources :videos
   resources :affiliate_orgs
+  resources :sign_in
+  resources :member
   root 'home#index'
   get 'home/index'
   get '/Home', to: 'home#index'
