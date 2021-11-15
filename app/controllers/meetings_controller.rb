@@ -10,6 +10,7 @@ class MeetingsController < ApplicationController
   def show
   end
 
+  def 
   # GET /meetings/new
   def new
     @meeting = Meeting.new

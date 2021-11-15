@@ -68,6 +68,6 @@ class AttendancesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def attendance_params
-      params.permit(:email, :meeting_number, :attended_at)
+      params.permit(:full_name, :email, :meeting_number, :attended_at)
     end
 end
