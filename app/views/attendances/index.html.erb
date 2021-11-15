@@ -79,7 +79,9 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 </table>
 <td><%= link_to "View Meetings", meetings_path%><td>
 <% end %>
+<% if Meeting.any? %>
 <td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => Meeting.last.Number, :attended_at => Time.now}, {:method => :post} %></td>
+<% end %>
 <% end %>
 <br>
 
