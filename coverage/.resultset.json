@@ -68,6 +68,12 @@
           null
         ]
       },
+      "/csce431/CADET2/cadet-member-tracker/app/helpers/meetings_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/csce431/CADET2/cadet-member-tracker/app/helpers/videos_helper.rb": {
         "lines": [
           null,
@@ -76,13 +82,70 @@
           null
         ]
       },
-      "/csce431/CADET2/cadet-member-tracker/app/controllers/sign_in_controller.rb": {
+      "/csce431/CADET2/cadet-member-tracker/app/models/meeting.rb": {
         "lines": [
+          1,
+          null
+        ]
+      },
+      "/csce431/CADET2/cadet-member-tracker/app/controllers/meetings_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
           null,
           null,
           1,
           1,
-          5,
+          null,
+          null,
+          null,
+          1,
+          null,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
           null,
           null,
           1,
@@ -91,9 +154,10 @@
           0,
           null,
           null,
-          1,
           null,
           1,
+          0,
+          null,
           null
         ]
       },
@@ -104,6 +168,61 @@
           1,
           null,
           null,
+          null,
+          null
+        ]
+      },
+      "/csce431/CADET2/cadet-member-tracker/app/controllers/sign_in_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          5,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          1,
+          0,
           null,
           null
         ]
@@ -441,6 +560,64 @@
         "branches": {
         }
       },
+      "/csce431/CADET2/cadet-member-tracker/app/controllers/member_controller.rb": {
+        "lines": [
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          null,
+          0,
+          0,
+          0,
+          null,
+          null,
+          0,
+          0,
+          0,
+          null,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/csce431/CADET2/cadet-member-tracker/app/controllers/members/sessions_controller.rb": {
         "lines": [
           null,
@@ -594,6 +771,6 @@
         }
       }
     },
-    "timestamp": 1636747805
+    "timestamp": 1636999952
   }
 }
