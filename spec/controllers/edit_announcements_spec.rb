@@ -13,18 +13,30 @@ RSpec.describe 'Authentication test', type: :feature do
   teardown do
     OmniAuth.config.test_mode = false
   end
+  let!(:announcement) { Announcement.create('title': 'test announcement title', 'author_announce': 'test announcement body') }
 
-  scenario 'Signs in as Admin and make announcement' do
+  scenario 'Signs in as Admin and edit announcement' do
     Rails.application.env_config['omniauth.auth'] = google_oauth2_mock_admin
     visit new_member_session_path
     click_link 'Sign in with Google'
-    visit new_announcement_path
-    fill_in 'title', with: 'test announcement title'
-    fill_in 'body', with: 'test announcement body'
-    click_on 'Create Announcement'
     visit announcements_path
-    expect(page).to have_content('test announcement title')
-    expect(page).to have_content('test announcement body')
+    click_on 'Edit'
+    fill_in 'title', with: 'test announcement title edit'
+    fill_in 'body', with: 'test announcement body edit'
+    click_on 'Update Announcement'
+    visit announcements_path
+    expect(page).to have_content('test announcement title edit')
+    expect(page).to have_content('test announcement body edit')
+  end
+  scenario 'Signs in as Admin and delete announcement' do
+    Rails.application.env_config['omniauth.auth'] = google_oauth2_mock_admin
+    visit new_member_session_path
+    click_link 'Sign in with Google'
+    visit announcements_path
+    click_on 'Destroy'
+    visit announcements_path
+    expect(page).to_not have_content('test announcement title edit')
+    expect(page).to_not have_content('test announcement body edit')
   end
 
   private
