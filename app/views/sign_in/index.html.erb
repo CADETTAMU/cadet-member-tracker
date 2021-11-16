@@ -82,7 +82,7 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
               <td><% if member.is_admin?%>Admin<% else %>Member<% end %></td>
               <% if member.email != current_member.email && member.email != 'tamucadetwebsite@gmail.com' %>
                 <td><%= link_to 'Edit User', edit_sign_in_path(member) %></td>
-                <td><%= link_to 'Delete User', member, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= link_to 'Delete User', member, method: :delete %></td>
               <% end %>
             </tr>
           <% end %>
