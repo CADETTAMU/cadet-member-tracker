@@ -49,7 +49,7 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 
 <!-- ################################################################################################### -->
 
-
+<% if member_signed_in? %>
 <p id="notice"><%= notice %></p>
 <% if member_signed_in? %>
 <% if current_member.is_admin? %>
@@ -57,6 +57,7 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 <table>
   <thead>
     <tr>
+      <th>Name</th>
       <th>Email</th>
       <th>Meeting#</th>
       <th>Date/Time</th>
@@ -67,6 +68,7 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
   <tbody>
     <% @attendances.each do |attendance| %>
       <tr>
+      	<td><%= attendance.full_name %></td>
         <td><%= attendance.email %></td>
         <td><%= attendance.meeting_number %></td>
         <td><%= attendance.created_at.in_time_zone("Central Time (US & Canada)") %></td>
@@ -79,10 +81,11 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 </table>
 <td><%= link_to "View Meetings", meetings_path%><td>
 <% end %>
+<% if Meeting.any? %>
+<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :full_name => current_member.full_name, :email => current_member.email, :meeting_number => Meeting.last.Number}, {:method => :post} %></td>
+<% end %>
 <% end %>
 <br>
-
-<td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => Meeting.last.Number, :attended_at => Time.now}, {:method => :post} %></td>
 
 
               
