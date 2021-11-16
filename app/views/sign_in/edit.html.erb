@@ -1,11 +1,10 @@
+<%= link_to 'Home', home_index_path %>
 <h1>Editing Member</h1>
 
 <% if member_signed_in? %>
 <% if current_member.is_admin? %>
-<% unless @member.email == 'tamucadetwebsite@gmail.com'%>
     <%= render 'form', member: @member %>
 <% end %>
 <% end %>
-<% end %>
 
-<%= link_to 'Back', new_member_session_path %>
+<%= link_to 'Back', sign_in_path %>
