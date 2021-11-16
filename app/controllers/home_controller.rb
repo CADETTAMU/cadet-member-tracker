@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 class HomeController < ApplicationController
-<<<<<<< HEAD
-  def index; end
-=======
   before_action :set_announcement, only: %i[ show edit update destroy ]
 
   # GET /announcements or /announcements.json
@@ -71,5 +68,4 @@ class HomeController < ApplicationController
     def announcement_params
       params.require(:announcement).permit(:author_announce, :publish_date, :title)
     end
->>>>>>> 2e67e9afa991e124119ffca44f46b8cd70894f16
 end
