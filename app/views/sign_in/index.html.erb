@@ -81,13 +81,8 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
               <td style="color:#FFFFFF;"><%= member.email %></td>
               <td style="color:#FFFFFF;"><% if member.is_admin?%>Admin<% else %>Member<% end %></td>
               <% if member.email != current_member.email && member.email != 'tamucadetwebsite@gmail.com' %>
-<<<<<<< Updated upstream
-                <td><%= link_to 'Edit User', edit_sign_in_path(member) %></td>
-                <td><%= link_to 'Delete User', member, method: :delete %></td>
-=======
                 <td style="color:#FFFFFF;"><%= link_to 'Edit User', edit_sign_in_path(member), style: 'color:#FFFFFF;' %></td>
                 <td style="color:#FFFFFF;"><%= link_to 'Delete User', member, style: 'color:#FFFFFF;', method: :delete, data: { confirm: 'Are you sure?' } %></td>
->>>>>>> Stashed changes
               <% end %>
             </tr>
           <% end %>
