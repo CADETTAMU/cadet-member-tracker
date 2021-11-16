@@ -1,50 +1,60 @@
-# frozen_string_literal: true
-
-require 'test_helper'
+require "test_helper"
 
 class AnnouncementsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @announcement = announcements(:one)
   end
 
-  test 'should get index' do
+  test "should get index" do
     get announcements_url
     assert_response :success
   end
 
-  test 'should get new' do
+  test "should get new" do
     get new_announcement_url
     assert_response :success
   end
 
-  test 'should create announcement' do
+  test "should create announcement" do
     assert_difference('Announcement.count') do
-      post announcements_url,
-           params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date,
-                                     title: @announcement.title } }
+<<<<<<< HEAD
+<<<<<<< HEAD
+      post announcements_url, params: { announcement: { body: @announcement.body, title: @announcement.title } }
+=======
+      post announcements_url, params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, publish_id: @announcement.publish_id, title: @announcement.title } }
+>>>>>>> dev
+=======
+      post announcements_url, params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, title: @announcement.title } }
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
     end
 
     assert_redirected_to announcement_url(Announcement.last)
   end
 
-  test 'should show announcement' do
+  test "should show announcement" do
     get announcement_url(@announcement)
     assert_response :success
   end
 
-  test 'should get edit' do
+  test "should get edit" do
     get edit_announcement_url(@announcement)
     assert_response :success
   end
 
-  test 'should update announcement' do
-    patch announcement_url(@announcement),
-          params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date,
-                                    title: @announcement.title } }
+  test "should update announcement" do
+<<<<<<< HEAD
+<<<<<<< HEAD
+    patch announcement_url(@announcement), params: { announcement: { body: @announcement.body, title: @announcement.title } }
+=======
+    patch announcement_url(@announcement), params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, publish_id: @announcement.publish_id, title: @announcement.title } }
+>>>>>>> dev
+=======
+    patch announcement_url(@announcement), params: { announcement: { author: @announcement.author, publish_date: @announcement.publish_date, title: @announcement.title } }
+>>>>>>> 650714873def2635752563da8831e2aa8d93d20d
     assert_redirected_to announcement_url(@announcement)
   end
 
-  test 'should destroy announcement' do
+  test "should destroy announcement" do
     assert_difference('Announcement.count', -1) do
       delete announcement_url(@announcement)
     end

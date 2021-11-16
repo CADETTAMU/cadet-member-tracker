@@ -1,18 +1,16 @@
-# frozen_string_literal: true
-
 Rails.application.routes.draw do
   resources :meetings
   # For OAuth
-  devise_for :members, controllers: { omniauth_callbacks: 'members/omniauth_callbacks' }
+  devise_for :members, controllers: {omniauth_callbacks: 'members/omniauth_callbacks'}
   devise_scope :member do
-    get 'sign_in', to: 'sign_in#index', as: :new_member_session
-    get 'sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
+    get 'members/sign_in', to: 'sign_in#index', as: :new_member_session
+	get 'members/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
   end
-
+  
   # For OAuth Testing
   post '/members/auth/google_oauth2'
 
-  # root :to => 'home#index'
+  #root :to => 'home#index'
 
   resources :attendances
   resources :announcements

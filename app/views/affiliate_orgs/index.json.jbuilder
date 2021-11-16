@@ -1,3 +1,1 @@
-# frozen_string_literal: true
-
-json.array! @affiliate_orgs, partial: 'affiliate_orgs/affiliate_org', as: :affiliate_org
+json.array! @affiliate_orgs, partial: "affiliate_orgs/affiliate_org", as: :affiliate_org

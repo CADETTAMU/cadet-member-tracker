@@ -1,3 +1,1 @@
-# frozen_string_literal: true
-
-json.partial! 'videos/video', video: @video
+json.partial! "videos/video", video: @video

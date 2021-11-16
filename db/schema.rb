@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -12,59 +10,61 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_211_110_004_122) do
+ActiveRecord::Schema.define(version: 2021_11_10_004122) do
+
   # These are extensions that must be enabled in order to support this database
-  enable_extension 'plpgsql'
+  enable_extension "plpgsql"
 
-  create_table 'affiliate_orgs', force: :cascade do |t|
-    t.string 'org_name'
-    t.string 'org_link'
-    t.string 'org_desc'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "affiliate_orgs", force: :cascade do |t|
+    t.string "org_name"
+    t.string "org_link"
+    t.string "org_desc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'announcements', force: :cascade do |t|
-    t.string 'title'
-    t.string 'author_announce'
-    t.datetime 'publish_date'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "announcements", force: :cascade do |t|
+    t.string "title"
+    t.string "author_announce"
+    t.datetime "publish_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'attendances', force: :cascade do |t|
-    t.integer 'meeting_number'
-    t.date 'attended_at'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
-    t.string 'email'
+  create_table "attendances", force: :cascade do |t|
+    t.integer "meeting_number"
+    t.date "attended_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "email"
   end
 
-  create_table 'meetings', force: :cascade do |t|
-    t.string 'Name'
-    t.integer 'Number'
-    t.datetime 'StartTime'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "meetings", force: :cascade do |t|
+    t.string "Name"
+    t.integer "Number"
+    t.datetime "StartTime"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table 'members', force: :cascade do |t|
-    t.string 'email', null: false
-    t.string 'full_name'
-    t.string 'uid'
-    t.string 'avatar_url'
-    t.boolean 'is_admin'
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['email'], name: 'index_members_on_email', unique: true
+  create_table "members", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "full_name"
+    t.string "uid"
+    t.string "avatar_url"
+    t.boolean "is_admin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_members_on_email", unique: true
   end
 
-  create_table 'videos', force: :cascade do |t|
-    t.datetime 'publish_date'
-    t.string 'title'
-    t.string 'link'
-    t.string 'uploader'
-    t.datetime 'created_at', precision: 6, null: false
-    t.datetime 'updated_at', precision: 6, null: false
+  create_table "videos", force: :cascade do |t|
+    t.datetime "publish_date"
+    t.string "title"
+    t.string "link"
+    t.string "uploader"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
+
 end
