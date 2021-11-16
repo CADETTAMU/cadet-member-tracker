@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :email %>
+    <%= form.label :Full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Email %>
     <%= form.text_field :email %>
   </div>
 
   <div class="field">
-    <%= form.label :meeting_number %>
-    <%= form.number_field :meeting_number %>
+    <%= form.label :Meeting_number %>
+    <%= form.number_field :meeting_number, id: 'number' %>
   </div>
 
   <div class="field">
-    <%= form.label :attended_at %>
-    <%= form.date_select :attended_at %>
+    <%= form.label :When? %>
+    <%= form.datetime_select :created_at %>
   </div>
 
   <div class="actions">

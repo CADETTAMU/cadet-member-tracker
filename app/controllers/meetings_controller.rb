@@ -3,14 +3,13 @@ class MeetingsController < ApplicationController
 
   # GET /meetings or /meetings.json
   def index
-    @meetings = Meeting.all
+    @meetings = Meeting.order(params[:sort])
   end
 
   # GET /meetings/1 or /meetings/1.json
   def show
   end
 
-  def 
   # GET /meetings/new
   def new
     @meeting = Meeting.new

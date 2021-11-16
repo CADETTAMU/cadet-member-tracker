@@ -1,5 +1,10 @@
+<% if member_signed_in? %>
+<% if current_member.is_admin? %>
 <h1>New Attendance</h1>
 
 <%= render 'form', attendance: @attendance %>
 
 <%= link_to 'Back', attendances_path %>
+
+<% end %>
+<% end %>

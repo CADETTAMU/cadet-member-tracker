@@ -51,16 +51,15 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 
 <% if member_signed_in? %>
 <p id="notice"><%= notice %></p>
-<% if member_signed_in? %>
 <% if current_member.is_admin? %>
 <h1 style="color:#FFFFFF;">Attendances</h1>
 <table style="color:#FFFFFF;">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Meeting#</th>
-      <th>Date/Time</th>
+    	<th><%= link_to "Name", :sort => "full_name"%> </th>
+    	<th><%= link_to "Email", :sort => "email"%> </th>
+    	<th><%= link_to "Meeting#", :sort => "meeting_number"%> </th>
+    	<th><%= link_to "Date/Time", :sort => "created_at"%> </th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -85,7 +84,6 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
 <td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :full_name => current_member.full_name, :email => current_member.email, :meeting_number => Meeting.last.Number}, {:method => :post} %></td>
 <% end %>
 <% end %>
-<br>
 
 <td><%= button_to 'Click to Attend' ,{:controller => 'attendances', :action => 'create', :email => current_member.email, :meeting_number => 1, :attended_at => DateTime.current}, {:method => :post} %></td>
 
