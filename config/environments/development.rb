@@ -1,4 +1,6 @@
-require "active_support/core_ext/integer/time"
+# frozen_string_literal: true
+
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
@@ -78,6 +80,6 @@ Rails.application.configure do
   ENV['GOOGLE_OAUTH_CLIENT_ID'] = '20270167427-jsjim7m6c9r763e9nrtt7mu9vsh3vl5j.apps.googleusercontent.com'
   ENV['GOOGLE_OAUTH_CLIENT_SECRET'] = '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'
 
-  #config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
-  config.action_mailer.default_url_options = { host: 'https://tamucadet-dev-xtmvqatyfljmukgp.herokuapp.com/'}
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000}
+  config.action_mailer.default_url_options = { host: 'https://tamucadet-dev-xtmvqatyfljmukgp.herokuapp.com/' }
 end
