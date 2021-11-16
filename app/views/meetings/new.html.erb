@@ -1,5 +1,9 @@
+<% if member_signed_in? %>
+<% if current_member.is_admin? %>
 <h1>New Meeting</h1>
 
 <%= render 'form', meeting: @meeting %>
 
 <%= link_to 'Back', meetings_path %>
+<% end %>
+<% end %>

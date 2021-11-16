@@ -1,5 +1,11 @@
+<% if member_signed_in? %>
+<% if current_member.is_admin? %>
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Name:</strong>
+  <%= @attendance.full_name%>
+</p>
 <p>
   <strong>Email:</strong>
   <%= @attendance.email %>
@@ -19,3 +25,5 @@
 <% end %>
 
 <%= link_to 'Back', attendances_path %>
+<% end %>
+<% end %>

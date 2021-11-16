@@ -5,7 +5,7 @@ class AttendancesController < ApplicationController
 
   # GET /attendances or /attendances.json
   def index
-    @attendances = Attendance.all
+    @attendances = Attendance.order(params[:sort])
   end
 
   # GET /attendances/1 or /attendances/1.json
@@ -62,13 +62,8 @@ class AttendancesController < ApplicationController
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
-  def set_attendance
-    @attendance = Attendance.find(params[:id])
-  end
-
-  # Only allow a list of trusted parameters through.
-  def attendance_params
-    params.permit(:email, :meeting_number, :attended_at)
-  end
+    # Only allow a list of trusted parameters through.
+    def attendance_params
+      params.permit(:full_name, :email, :meeting_number, :attended_at)
+    end
 end

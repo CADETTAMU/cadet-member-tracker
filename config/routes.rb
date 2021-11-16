@@ -5,8 +5,13 @@ Rails.application.routes.draw do
   # For OAuth
   devise_for :members, controllers: { omniauth_callbacks: 'members/omniauth_callbacks' }
   devise_scope :member do
+<<<<<<< HEAD
     get 'members/sign_in', to: 'sign_in#index', as: :new_member_session
     get 'members/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
+=======
+    get '/sign_in', to: 'sign_in#index', as: :new_member_session
+	get '/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
+>>>>>>> 2e67e9afa991e124119ffca44f46b8cd70894f16
   end
 
   # For OAuth Testing
@@ -22,6 +27,7 @@ Rails.application.routes.draw do
   resources :member
   root 'home#index'
   get 'home/index'
+  get '/About Us', to: 'home#About Us'
   get '/Home', to: 'home#index'
   get '/Videos', to: 'videos#index'
   get '/Calendar', to: 'home#calendar'
