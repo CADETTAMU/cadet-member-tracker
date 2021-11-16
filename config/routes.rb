@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get '/sign_in', to: 'sign_in#index', as: :new_member_session
 	get '/sign_out', to: 'devise/sessions#destroy', as: :destroy_member_session
   end
-  
+
   # For OAuth Testing
   post '/members/auth/google_oauth2'
 
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :member
   root 'home#index'
   get 'home/index'
+  get '/About Us', to: 'home#About Us'
   get '/Home', to: 'home#index'
   get '/Videos', to: 'videos#index'
   get '/Calendar', to: 'home#calendar'
