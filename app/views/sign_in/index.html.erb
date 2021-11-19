@@ -63,6 +63,8 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
         <%= link_to "Sign Out" , destroy_member_session_path, style: 'color:#FFFFFF;' %>
 
         <% if current_member.is_admin?%>
+        <br>
+        <%= link_to 'Profile Page Manual', '/Account_Manual.pdf', :target => 'blank', style: 'color:#FFFFFF;' %>
         <!-- Show all uesrs for promotions/deletions -->
         <table style='border: 1px solid white;', style="color:#FFFFFF;">
           <thead style="color:#FFFFFF;">
