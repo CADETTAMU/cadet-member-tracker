@@ -90,8 +90,13 @@ var a=(this||self)._jsa||{};a._cfc=void 0;a._aeh=void 0;/*
         </table>
 
         <br>
+
+
+
         <% if member_signed_in? %>
         <% if current_member.is_admin? %>
+        <%= link_to 'Instructions', '/Affiliate_Orgs_instructions.pdf', :target => 'blank', style: 'color:#FFFFFF;' %>
+        <br>
         <%= link_to 'New Affiliate Org' , new_affiliate_org_path, style: 'color:#FFFFFF;' %>
         <% end %>
         <% end %>
